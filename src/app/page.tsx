@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import NavbarStyleMinimal from '@/components/navbar/NavbarStyleMinimal';
 import HeroBillboard from '@/components/sections/hero/HeroBillboard';
@@ -10,17 +10,6 @@ import ContactCenterForm from '@/components/sections/contact/ContactCenterForm';
 import FooterBase from '@/components/sections/footer/FooterBase';
 import { ThemeProvider } from '@/providers/ThemeProvider';
 
-const assetMap = [
-  {"id":"hero-image","url":"https://images.pexels.com/photos/2000511/pexels-photo-2000511.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"Close-up of freshly baked bread rolls on a wooden board and basket, ideal for food photography."},
-  {"id":"about-image","url":"https://images.pexels.com/photos/34384683/pexels-photo-34384683.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"baking ingredients - Photo by Roberto Carrillo"},
-  {"id":"cinnamon-bun","url":"https://images.pexels.com/photos/351962/pexels-photo-351962.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"Warm and inviting cinnamon rolls on a white plate, perfect for a sweet treat."},
-  {"id":"vanilla-pastry","url":"https://images.pexels.com/photos/34364392/pexels-photo-34364392.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"vanilla pastry - Photo by Lam N"},
-  {"id":"raisin-roll","url":"https://images.pexels.com/photos/34363022/pexels-photo-34363022.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"Close-up of hands rolling dough with a pin on a flour-dusted wooden table."},
-  {"id":"testimonial-1","url":"https://images.pexels.com/photos/7447279/pexels-photo-7447279.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"A cheerful baker in a kitchen giving fresh bread to a customer. Perfect for culinary or bakery-themed content."},
-  {"id":"testimonial-2","url":"https://images.pexels.com/photos/5710222/pexels-photo-5710222.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"Happy ethnic female friends with shopping bags smiling while demonstrating goods to each other"},
-  {"id":"contact-image","url":"https://images.pexels.com/photos/34384690/pexels-photo-34384690.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"cozy bakery - Photo by Roberto Carrillo"}
-];
-
 export default function Page() {
   return (
     <ThemeProvider
@@ -31,13 +20,14 @@ export default function Page() {
       <div id="nav" data-section="nav">
         <NavbarStyleMinimal 
           brandName="{{Бренд булочек}}"
+          button={{ text: "Get Started", href: "#contact" }}
         />
       </div>
       <div id="hero" data-section="hero">
         <HeroBillboard 
           title="Свежие булочки каждый день" 
           description="Выпекаем с 6:00, без заморозки"
-          imageSrc={assetMap.find(a => a.id === 'hero-image')?.url ?? '/public/images/placeholder.webp'}
+          imageSrc="https://images.pexels.com/photos/2000511/pexels-photo-2000511.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
           ariaLabel="Hero section"
           buttons={[
             { text: "Заказать сейчас", href: "#contact" },
@@ -54,8 +44,8 @@ export default function Page() {
             { title: "Натуральные ингредиенты", description: "Используем только лучшие натуральные продукты." },
             { title: "Доставка по {{city}}", description: "Быстрая и надежная доставка." }
           ]}
-          imageSrc={assetMap.find(a => a.id === 'about-image')?.url ?? '/public/images/placeholder.webp'}
-          imageAlt="baking ingredients - Photo by Roberto Carrillo"
+          imageSrc="https://images.pexels.com/photos/34384683/pexels-photo-34384683.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          imageAlt="Baking ingredients"
           ariaLabel="About section"
         />
       </div>
@@ -64,9 +54,9 @@ export default function Page() {
           title="Наше меню"
           description="Попробуйте лучшие булочки в городе."
           products={[
-            { id: "1", name: "Булочка с корицей", price: "{{price1}}", imageSrc: assetMap.find(a => a.id === 'cinnamon-bun')?.url ?? '/public/images/placeholder.webp', onProductClick: "#" },
-            { id: "2", name: "Ванильная сдоба", price: "{{price2}}", imageSrc: assetMap.find(a => a.id === 'vanilla-pastry')?.url ?? '/public/images/placeholder.webp', onProductClick: "#" },
-            { id: "3", name: "С изюмом", price: "{{price3}}", imageSrc: assetMap.find(a => a.id === 'raisin-roll')?.url ?? '/public/images/placeholder.webp', onProductClick: "#" }
+            { id: "1", name: "Булочка с корицей", price: "{{price1}}", imageSrc: "https://images.pexels.com/photos/351962/pexels-photo-351962.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", onProductClick: "#" },
+            { id: "2", name: "Ванильная сдоба", price: "{{price2}}", imageSrc: "https://images.pexels.com/photos/34364392/pexels-photo-34364392.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", onProductClick: "#" },
+            { id: "3", name: "С изюмом", price: "{{price3}}", imageSrc: "https://images.pexels.com/photos/34363022/pexels-photo-34363022.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", onProductClick: "#" }
           ]}
           buttons={[
             { text: "Смотреть всё меню", href: "#" }
@@ -129,7 +119,7 @@ export default function Page() {
             }
           ]}
           copyrightText="© {{year}} {{Бренд булочек}}"
-          logoSrc={assetMap.find(a => a.id === 'contact-image')?.url ?? '/public/images/placeholder.webp'}
+          logoSrc="https://images.pexels.com/photos/34384690/pexels-photo-34384690.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
         />
       </div>
     </ThemeProvider>
