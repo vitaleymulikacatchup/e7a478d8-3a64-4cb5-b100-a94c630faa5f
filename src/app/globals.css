@@ -4,13 +4,13 @@
   /* Base units */
   --vw: clamp(0.5rem, 0.8vw, 1rem);
 
-  --background: #000606;;
-  --card: #0d1d1d;;
-  --foreground: #d5f5ff;;
-  --primary-cta: #22d3ee;;
-  --secondary-cta: #0a1f1f;;
-  --accent: #67e8f9;;
-  --background-accent: #0891b2;;
+  --background: #fefef5;;
+  --card: #fdfdf0;;
+  --foreground: #1a1a00;;
+  --primary-cta: #ffcf40;;
+  --secondary-cta: #ffffff;;
+  --accent: #facc15;;
+  --background-accent: #ffbf00;;
   
   /* text sizing */
   --text-2xs: clamp(0.465rem, 0.62vw, 0.62rem);

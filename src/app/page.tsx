@@ -1,154 +1,109 @@
-"use client";
+"use client"
 
-import { ThemeProvider } from "@/providers/ThemeProvider";
-import NavbarStyleApple from "@/components/navbar/NavbarStyleApple/NavbarStyleApple";
-import HeroSplit from "@/components/sections/hero/HeroSplit";
-import FeatureCardOne from "@/components/sections/feature/FeatureCardOne";
-import PricingCardOne from "@/components/sections/pricing/PricingCardOne";
-import TestimonialCardOne from "@/components/sections/testimonial/TestimonialCardOne";
-import FaqSplitMedia from "@/components/sections/faq/FaqSplitMedia";
-import ContactCenterForm from "@/components/sections/contact/ContactCenterForm";
-import FooterBase from "@/components/sections/footer/FooterBase";
+import NavbarStyleMinimal from '@/components/navbar/NavbarStyleMinimal';
+import HeroBillboard from '@/components/sections/hero/HeroBillboard';
+import SplitAbout from '@/components/sections/about/SplitAbout';
+import ProductCardOne from '@/components/sections/product/ProductCardOne';
+import TestimonialCardTwo from '@/components/sections/testimonial/TestimonialCardTwo';
+import FaqBase from '@/components/sections/faq/FaqBase';
+import ContactCenterForm from '@/components/sections/contact/ContactCenterForm';
+import FooterBase from '@/components/sections/footer/FooterBase';
+import { ThemeProvider } from '@/providers/ThemeProvider';
+
+const assetMap = [
+  {"id":"hero-image","url":"https://images.pexels.com/photos/2000511/pexels-photo-2000511.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"Close-up of freshly baked bread rolls on a wooden board and basket, ideal for food photography."},
+  {"id":"about-image","url":"https://images.pexels.com/photos/34384683/pexels-photo-34384683.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"baking ingredients - Photo by Roberto Carrillo"},
+  {"id":"cinnamon-bun","url":"https://images.pexels.com/photos/351962/pexels-photo-351962.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"Warm and inviting cinnamon rolls on a white plate, perfect for a sweet treat."},
+  {"id":"vanilla-pastry","url":"https://images.pexels.com/photos/34364392/pexels-photo-34364392.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"vanilla pastry - Photo by Lam N"},
+  {"id":"raisin-roll","url":"https://images.pexels.com/photos/34363022/pexels-photo-34363022.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"Close-up of hands rolling dough with a pin on a flour-dusted wooden table."},
+  {"id":"testimonial-1","url":"https://images.pexels.com/photos/7447279/pexels-photo-7447279.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"A cheerful baker in a kitchen giving fresh bread to a customer. Perfect for culinary or bakery-themed content."},
+  {"id":"testimonial-2","url":"https://images.pexels.com/photos/5710222/pexels-photo-5710222.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"Happy ethnic female friends with shopping bags smiling while demonstrating goods to each other"},
+  {"id":"contact-image","url":"https://images.pexels.com/photos/34384690/pexels-photo-34384690.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"cozy bakery - Photo by Roberto Carrillo"}
+];
 
 export default function Page() {
   return (
     <ThemeProvider
-      defaultButtonVariant="hover-magnetic"
+      defaultButtonVariant="icon-arrow"
       defaultTextAnimation="entrance-slide"
-      borderRadius="rounded"
+      borderRadius="pill"
     >
       <div id="nav" data-section="nav">
-        <NavbarStyleApple
-          brandName="Audi Auto Car Lab"
-          logoSrc="https://images.pexels.com/photos/9949424/pexels-photo-9949424.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-          navItems={[
-            { name: "Home", id: "hero" },
-            { name: "Services", id: "about" },
-            { name: "Portfolio", id: "pricing" },
-            { name: "Contact", id: "contact" }
-          ]}
+        <NavbarStyleMinimal 
+          brandName="{{Бренд булочек}}"
         />
       </div>
       <div id="hero" data-section="hero">
-        <HeroSplit
-          title="Премиальный тюнинг Audi — безопасно, законно, OEM+"
-          description="Stage 1–2, выхлоп, PPF, подвеска, диагностика."
-          imageSrc="https://images.pexels.com/photos/14836039/pexels-photo-14836039.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-          buttons={[
-            { text: "Записаться", href: "#contact" },
-            { text: "WhatsApp", href: "https://wa.me/YOUR_PHONE" }
-          ]}
+        <HeroBillboard 
+          title="Свежие булочки каждый день" 
+          description="Выпекаем с 6:00, без заморозки"
+          imageSrc={assetMap.find(a => a.id === 'hero-image')?.url ?? '/public/images/placeholder.webp'}
           ariaLabel="Hero section"
+          buttons={[
+            { text: "Заказать сейчас", href: "#contact" },
+            { text: "Позвонить {{phone}}", href: "tel:{{phone}}" }
+          ]}
         />
       </div>
       <div id="about" data-section="about">
-        <FeatureCardOne
-          title="Наши услуги"
-          description="Откройте для себя высокий уровень тюнинга Audi"
-          features={[
-            {
-              title: "Чип-тюнинг",
-              description: "Улучшите производительность и эффективность.",
-              imageSrc: "https://images.pexels.com/photos/14836039/pexels-photo-14836039.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-            },
-            {
-              title: "Выхлопные системы",
-              description: "Оптимальные решения для выхлопных систем Audi.",
-              imageSrc: "https://images.pexels.com/photos/1550611/pexels-photo-1550611.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-            }
+        <SplitAbout
+          title="О нас"
+          description="Узнайте, почему наши булочки такие свежие."
+          bulletPoints={[
+            { title: "Свежо и вкусно", description: "Всегда свежая выпечка из лучших ингредиентов." },
+            { title: "Натуральные ингредиенты", description: "Используем только лучшие натуральные продукты." },
+            { title: "Доставка по {{city}}", description: "Быстрая и надежная доставка." }
           ]}
-          ariaLabel="Feature section"
+          imageSrc={assetMap.find(a => a.id === 'about-image')?.url ?? '/public/images/placeholder.webp'}
+          imageAlt="baking ingredients - Photo by Roberto Carrillo"
+          ariaLabel="About section"
         />
       </div>
-      <div id="pricing" data-section="pricing">
-        <PricingCardOne
-          title="Цены на пакеты"
-          description="Выберите идеальный пакет для вашей Audi"
-          plans={[
-            {
-              id: "basic",
-              badge: "Популярное",
-              price: "от 50,000₽",
-              subtitle: "Stage 1, кодирование",
-              features: ["Чип-тюнинг", "Гарантия"]
-            },
-            {
-              id: "sports",
-              badge: "Спорт",
-              price: "от 100,000₽",
-              subtitle: "Stage 2, выхлоп/подвеска",
-              features: ["Аудио система", "Пакет гарантии"]
-            }
+      <div id="product" data-section="product">
+        <ProductCardOne
+          title="Наше меню"
+          description="Попробуйте лучшие булочки в городе."
+          products={[
+            { id: "1", name: "Булочка с корицей", price: "{{price1}}", imageSrc: assetMap.find(a => a.id === 'cinnamon-bun')?.url ?? '/public/images/placeholder.webp', onProductClick: "#" },
+            { id: "2", name: "Ванильная сдоба", price: "{{price2}}", imageSrc: assetMap.find(a => a.id === 'vanilla-pastry')?.url ?? '/public/images/placeholder.webp', onProductClick: "#" },
+            { id: "3", name: "С изюмом", price: "{{price3}}", imageSrc: assetMap.find(a => a.id === 'raisin-roll')?.url ?? '/public/images/placeholder.webp', onProductClick: "#" }
           ]}
-          ariaLabel="Pricing section"
+          buttons={[
+            { text: "Смотреть всё меню", href: "#" }
+          ]}
         />
       </div>
-      <div id="testimonials" data-section="testimonials">
-        <TestimonialCardOne
-          title="Отзывы наших клиентов"
-          description="Реальные отзывы владельцев Audi"
+      <div id="testimonial" data-section="testimonial">
+        <TestimonialCardTwo
+          title="Отзывы"
+          description="Что говорят наши клиенты"
           testimonials={[
-            {
-              id: "1",
-              name: "Алексей Иванов",
-              role: "Владелец Audi SQ5",
-              company: "Тюнинг мастер",
-              rating: 5,
-              imageSrc: "https://images.pexels.com/photos/7144209/pexels-photo-7144209.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Joyful couple in their new car, holding keys in a dealership showroom, smiling warmly."
-            },
-            {
-              id: "2",
-              name: "Ольга Петрова",
-              role: "Владелица Audi RS",
-              company: "Любитель скорости",
-              rating: 5,
-              imageSrc: "https://images.pexels.com/photos/4173091/pexels-photo-4173091.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Cheerful woman in a car with a bottle, enjoying a sunny day on a road trip."
-            },
-            {
-              id: "3",
-              name: "Иван Сергеев",
-              role: "Владелец Audi A5",
-              company: "Автоэксперт",
-              rating: 5,
-              imageSrc: "https://images.pexels.com/photos/9661333/pexels-photo-9661333.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Lowered blue Audi with white rims in an underground parking garage at night."
-            },
-            {
-              id: "4",
-              name: "Мария Кузнецова",
-              role: "Владелица Audi Q7",
-              company: "Энтузиаст",
-              rating: 5,
-              imageSrc: "https://images.pexels.com/photos/15492067/pexels-photo-15492067.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Customized blue Audi TT sports car with striking neon lights parked in an urban environment."
-            }
+            { id: "1", name: "Иван Петров", role: "Клиент", testimonial: "Обожаю их булочки, особенно с корицей!" },
+            { id: "2", name: "Анна Кузнецова", role: "Клиент", testimonial: "Всегда свежие и вкусные, рекомендую." }
           ]}
           ariaLabel="Testimonials section"
         />
       </div>
       <div id="faq" data-section="faq">
-        <FaqSplitMedia
+        <FaqBase
           title="Часто задаваемые вопросы"
-          description="Ответы на популярные вопросы"
+          description="Найдите ответы на ваши вопросы"
           faqs={[
-            { id: "1", title: "Как насчет гарантии?", content: "Мы предлагаем гарантию на все наши работы." },
-            { id: "2", title: "Законно ли это?", content: "Наши услуги полностью законны и сертифицированы." }
+            { id: "1", title: "Как проходит доставка?", content: "Доставка осуществляется по {{city}} в течение дня." },
+            { id: "2", title: "Когда выпекаются булочки?", content: "Выпекаем ежедневно с 6:00 утра." },
+            { id: "3", title: "Как можно оплатить?", content: "Принимаем наличные и банковские карты." }
           ]}
-          imageSrc="https://images.pexels.com/photos/14836039/pexels-photo-14836039.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-          imageAlt="Специалист по тюнингу"
           ariaLabel="FAQ section"
         />
       </div>
       <div id="contact" data-section="contact">
         <ContactCenterForm
           title="Свяжитесь с нами"
-          description="Заполните форму, и мы свяжемся с вами"
+          description="Оставьте заявку, и мы свяжемся с вами"
           inputs={[
             { name: "name", type: "text", placeholder: "Ваше имя", required: true },
             { name: "phone", type: "text", placeholder: "Ваш телефон", required: true },
-            { name: "model", type: "text", placeholder: "Модель Audi", required: true }
+            { name: "order", type: "text", placeholder: "Позиции/кол-во", required: true }
           ]}
           textarea={{ name: "comment", placeholder: "Комментарий", rows: 5, required: true }}
           buttonText="Отправить"
@@ -158,11 +113,23 @@ export default function Page() {
       <div id="footer" data-section="footer">
         <FooterBase
           columns={[
-            { title: "Компания", items: [{ label: "О нас", href: "#about" }, { label: "Контакты", href: "#contact" }] },
-            { title: "Клиенты", items: [{ label: "Отзывы", href: "#testimonials" }, { label: "Цены", href: "#pricing" }] }
+            {
+              title: "Меню",
+              items: [
+                { label: "О нас", href: "#about" },
+                { label: "Контакты", href: "#contact" }
+              ]
+            },
+            {
+              title: "Информация",
+              items: [
+                { label: "Отзывы", href: "#testimonial" },
+                { label: "Вопросы", href: "#faq" }
+              ]
+            }
           ]}
-          copyrightText="© 2025 Audi Auto Car Lab"
-          logoSrc="https://images.pexels.com/photos/9949424/pexels-photo-9949424.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          copyrightText="© {{year}} {{Бренд булочек}}"
+          logoSrc={assetMap.find(a => a.id === 'contact-image')?.url ?? '/public/images/placeholder.webp'}
         />
       </div>
     </ThemeProvider>

@@ -77,23 +77,25 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Audi Auto Car Lab — OEM+ тюнинг Audi в {{город}}",
-  description: "Stage 1–2, выхлоп, подвеска, PPF, кодирование, гарантия и династенд.",
-  keywords: "Audi, тюнинг, чип-тюнинг, выхлоп, подвеска, PPF",
-  metadataBase: new URL("https://webild.io"),
-  alternates: { canonical: "https://webild.io" },
+  title: "{{Бренд булочек}} — свежие булочки в {{city}}",
+  description: "Свежая выпечка и доставка. Звоните: {{phone}}",
   openGraph: {
-    title: "Audi Auto Car Lab — OEM+ тюнинг Audi",
-    description: "Stage 1–2, выхлоп, подвеска, PPF, кодирование, гарантия и династенд.",
-    siteName: "Audi Auto Car Lab",
-    images: [{ url: "https://images.pexels.com/photos/14836039/pexels-photo-14836039.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Премиальный тюнинг Audi" }],
+    title: "{{Бренд булочек}} — свежие булочки в {{city}}",
+    description: "Свежая выпечка и доставка. Звоните: {{phone}}",
+    siteName: "{{Бренд булочек}}",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/2000511/pexels-photo-2000511.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        alt: "Свежие булочки каждый день"
+      }
+    ],
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Audi Auto Car Lab — OEM+ тюнинг Audi",
-    description: "Stage 1–2, выхлоп, подвеска, PPF, кодирование, гарантия и династенд.",
-    images: ["https://images.pexels.com/photos/14836039/pexels-photo-14836039.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"]
+    title: "{{Бренд булочек}} — свежие булочки в {{city}}",
+    description: "Свежая выпечка и доставка. Звоните: {{phone}}",
+    images: ["https://images.pexels.com/photos/2000511/pexels-photo-2000511.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"]
   },
   robots: {
     index: true,
