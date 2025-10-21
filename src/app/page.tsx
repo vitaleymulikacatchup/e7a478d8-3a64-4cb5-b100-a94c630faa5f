@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import NavbarStyleApple from "@/components/navbar/NavbarStyleApple/NavbarStyleApple";
@@ -60,13 +60,13 @@ export default function Page() {
             {
               title: "Чип-тюнинг",
               description: "Улучшите производительность и эффективность.",
-              imageSrc={assetMap.find(a => a.id === 'feature-1')?.url ?? "/public/images/placeholder.webp"},
+              imageSrc: assetMap.find(a => a.id === 'feature-1')?.url ?? "/public/images/placeholder.webp",
               alt: "Чип-тюнинг для Audi"
             },
             {
               title: "Выхлопные системы",
               description: "Оптимальные решения для выхлопных систем Audi.",
-              imageSrc={assetMap.find(a => a.id === 'feature-2')?.url ?? "/public/images/placeholder.webp"},
+              imageSrc: assetMap.find(a => a.id === 'feature-2')?.url ?? "/public/images/placeholder.webp",
               alt: "Системы выхлопа для Audi"
             }
           ]}
@@ -107,7 +107,7 @@ export default function Page() {
               role: "Владелец Audi SQ5",
               company: "Тюнинг мастер",
               rating: 5,
-              imageSrc={assetMap.find(a => a.id === 'testimonial-1')?.url ?? "/public/images/placeholder.webp"},
+              imageSrc: assetMap.find(a => a.id === 'testimonial-1')?.url ?? "/public/images/placeholder.webp",
               alt: "Положительный отзыв о тюнинге Audi"
             },
             {
@@ -116,7 +116,7 @@ export default function Page() {
               role: "Владелица Audi RS",
               company: "Любитель скорости",
               rating: 5,
-              imageSrc={assetMap.find(a => a.id === 'testimonial-2')?.url ?? "/public/images/placeholder.webp"},
+              imageSrc: assetMap.find(a => a.id === 'testimonial-2')?.url ?? "/public/images/placeholder.webp",
               alt: "Клиентка с Audi RS дает отзыв"
             },
             {
@@ -125,7 +125,7 @@ export default function Page() {
               role: "Владелец Audi A5",
               company: "Автоэксперт",
               rating: 5,
-              imageSrc={assetMap.find(a => a.id === 'testimonial-3')?.url ?? "/public/images/placeholder.webp"},
+              imageSrc: assetMap.find(a => a.id === 'testimonial-3')?.url ?? "/public/images/placeholder.webp",
               alt: "Клиент Audi A5 доволен сервисом"
             },
             {
@@ -134,7 +134,7 @@ export default function Page() {
               role: "Владелица Audi Q7",
               company: "Энтузиаст",
               rating: 5,
-              imageSrc={assetMap.find(a => a.id === 'testimonial-4')?.url ?? "/public/images/placeholder.webp"},
+              imageSrc: assetMap.find(a => a.id === 'testimonial-4')?.url ?? "/public/images/placeholder.webp",
               alt: "Клиентка Audi Q7 оставила отзыв"
             }
           ]}
